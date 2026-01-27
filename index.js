@@ -150,3 +150,25 @@ let b = 10;
 
 console.log(a, b); // 10 5
 
+
+// Problem 12: Check if a Number is Prime
+function isPrime(num) {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isPrime(7)); // true
+
+// Problem 13: Find Second Largest Number in Array
+function secondLargest(arr) {
+  let unique = [...new Set(arr)];
+  unique.sort((a, b) => b - a);
+  return unique[1];
+}
+
+console.log(secondLargest([10, 5, 20, 20, 8])); // 10
+
