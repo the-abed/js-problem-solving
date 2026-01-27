@@ -11,7 +11,6 @@ console.log(reverseString("hello")); // olleh
 
 
 // Problem 2: Count Vowels in a String
-
 function countVowels(str) {
   let vowels = "aeiou";
   let count = 0;
@@ -26,8 +25,8 @@ function countVowels(str) {
 
 console.log(countVowels("programming")); // 3
 
-// Problem 3: Check for Palindrome
 
+// Problem 3: Check for Palindrome
 function isPalindrome(str) {
   let reversed = "";
 
@@ -43,7 +42,6 @@ console.log(isPalindrome("hello")); // false
 
 
 // Problem 4: Find the Maximum Number
-
 function findMax(arr) {
   let max = arr[0];
 
@@ -71,6 +69,7 @@ function removeDuplicates(arr) {
 }
 
 console.log(removeDuplicates([1, 2, 2, 3, 4, 4])); // [1,2,3,4]
+
 
 //Problem 6: Sum of All Numbers in an Array
 function sumArray(arr) {
@@ -142,3 +141,12 @@ function pingPong() {
 }
 
 pingPong();
+
+// Problem 11: Swap Two Variables (Without Third Variable)
+let a = 5;
+let b = 10;
+
+[a, b] = [b, a];
+
+console.log(a, b); // 10 5
+
