@@ -172,3 +172,43 @@ function secondLargest(arr) {
 
 console.log(secondLargest([10, 5, 20, 20, 8])); // 10
 
+
+
+// Problem 14: Convert Celsius to Fahrenheit
+function celsiusToFahrenheit(celsius) {
+  let fahrenheit = (celsius * 9) / 5 + 32;
+  return fahrenheit;
+}
+
+console.log(celsiusToFahrenheit(25)); // 77
+
+
+// Problem 15: Sort an Array Ascending
+let arr = [5, 2, 9, 1, 7];
+
+arr.sort((a, b) => a - b);  // a - b → ascending ,  b - a → descending
+
+
+console.log(arr); // [1, 2, 5, 7, 9]
+
+
+// Problem 16: Sort Strings Alphabetically
+let words = ["apple", "banana", "cherry", "date"];
+
+words.sort();
+
+console.log(words); // ["apple", "banana", "cherry", "date"]
+
+
+// Problem 17: Sort Array of Objects by Property
+let students = [
+  { name: "Ali", marks: 85 },
+  { name: "Sara", marks: 92 },
+  { name: "John", marks: 78 }
+];
+
+students.sort((a, b) => b.marks - a.marks);
+
+console.log(students);
+
+
