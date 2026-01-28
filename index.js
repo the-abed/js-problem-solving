@@ -225,3 +225,30 @@ function findDuplicates(arr) {
 }
 
 console.log(findDuplicates([1, 2, 3, 2, 4, 1]));
+
+
+// Find Missing Numbers in an Array
+function findMissing(arr) {
+  let missing = [];
+  let max = Math.max(...arr);
+
+  for (let i = 1; i <= max; i++) {
+    if (!arr.includes(i)) missing.push(i);
+  }
+  return missing;
+}
+
+console.log(findMissing([1, 2, 4, 6]));
+
+
+// Find Common Elements in Two Arrays
+function findCommon(arr1, arr2) {
+  let common = [];
+
+  for (let num of arr1) {
+    if (arr2.includes(num)) common.push(num);
+  }
+  return common;
+}
+
+console.log(findCommon([1, 2, 3], [2, 3, 4]));
