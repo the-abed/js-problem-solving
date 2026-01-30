@@ -252,3 +252,31 @@ function findCommon(arr1, arr2) {
 }
 
 console.log(findCommon([1, 2, 3], [2, 3, 4]));
+
+
+// Find Sum of Digits
+function sumDigits(num) {
+  return num
+    .toString()
+    .split("")
+    .reduce((sum, digit) => sum + Number(digit), 0);
+}
+
+console.log(sumDigits(123)); // 6
+
+// Multiply Two Numbers
+function multiply(a, b) {
+  return a * b;
+}
+
+console.log(multiply(4, 6)); // 24
+
+
+// Divide Two Numbers
+
+function divide(a, b) {
+  if (b === 0) return "Cannot divide by zero";
+  return a / b;
+}
+
+console.log(divide(10, 2)); // 5
