@@ -307,3 +307,31 @@ function countDigits(num) {
 }
 
 console.log(countDigits(12345)); // 5
+
+
+// Callback Functions
+function greet(name) {
+  console.log("Hello " + name);
+}
+
+function sayHello(callback) {
+  callback("Abed");
+}
+
+sayHello(greet); // Hello Abed
+
+// Callback with Math Example (Beginner-Friendly)
+function calculate(a, b, callback) {
+  return callback(a, b);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+function multiply(x, y) {
+  return x * y;
+}
+
+console.log(calculate(4, 5, add));      // 9
+console.log(calculate(4, 5, multiply)); // 20
