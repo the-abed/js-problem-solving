@@ -280,3 +280,30 @@ function divide(a, b) {
 }
 
 console.log(divide(10, 2)); // 5
+
+
+//Find the Sum of Odd Numbers from 1 to N
+function sumOdd(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i += 2) {
+    sum += i;
+  }
+  return sum;
+}
+
+console.log(sumOdd(10)); // 25
+
+//Count Digits of a Number (Without String)
+function countDigits(num) {
+  let count = 0;
+
+  if (num === 0) return 1;
+
+  while (num > 0) {
+    count++;
+    num = Math.floor(num / 10);
+  }
+  return count;
+}
+
+console.log(countDigits(12345)); // 5
