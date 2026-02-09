@@ -351,5 +351,20 @@ arr1[0] = 10;
 console.log(arr1); // [10, 2, 3]
 console.log(arr2); // [10, 2, 3]
 
+// this keyword
+let obj = {
+  name: "John",
+  age: 30,
+  greet: function () {
+    console.log("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+  }
+};
+
+obj.greet();
+
+// IIFE (Immediately Invoked Function Expression)
+(function () {
+  console.log("Hello, world!");
+})();
 
 
