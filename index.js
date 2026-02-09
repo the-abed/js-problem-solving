@@ -335,3 +335,21 @@ function multiply(x, y) {
 
 console.log(calculate(4, 5, add));      // 9
 console.log(calculate(4, 5, multiply)); // 20
+
+
+// Passed by value
+let x = 5;
+let y = x;
+x = 10;
+console.log(x); // 10
+console.log(y); // 5
+
+// Passed by reference
+let arr1 = [1, 2, 3];
+let arr2 = arr1;
+arr1[0] = 10;
+console.log(arr1); // [10, 2, 3]
+console.log(arr2); // [10, 2, 3]
+
+
+
