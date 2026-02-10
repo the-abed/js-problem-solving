@@ -387,3 +387,29 @@ processNumbers(5, 3, function (x, y) {
 });
 
 
+
+// Callback for Condition (Success / Fail)
+function checkEven(num, callback) {
+  callback(num % 2 === 0);
+}
+
+checkEven(10, function (result) {
+  if (result) {
+    console.log("Even number");
+  } else {
+    console.log("Odd number");
+  }
+});
+
+
+// Callback After Delay
+function delayMessage(callback) {
+  setTimeout(function () {
+    callback();
+  }, 1000);
+}
+
+delayMessage(function () {
+  console.log("Hello after 1 second");
+});
+
