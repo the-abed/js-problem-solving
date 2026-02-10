@@ -367,4 +367,23 @@ obj.greet();
   console.log("Hello, world!");
 })();
 
+// Basic Callback Execution
+
+function callMe(callback) {
+  callback();
+}
+
+callMe(function () {
+  console.log("Callback executed");
+});
+
+// Callback with Parameters
+function processNumbers(a, b, callback) {
+  callback(a, b);
+}
+
+processNumbers(5, 3, function (x, y) {
+  console.log(x + y);
+});
+
 
