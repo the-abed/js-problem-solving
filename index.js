@@ -413,3 +413,48 @@ delayMessage(function () {
   console.log("Hello after 1 second");
 });
 
+
+// Conditional 
+
+let num = 10;
+
+if (num > 0) {
+  console.log("Positive number");
+} else if (num < 0) {
+  console.log("Negative number");
+} else {
+  console.log("Zero");
+} 
+
+// Nested Condition
+
+// let num = 10;
+
+// if (num > 0) {
+//   console.log("Positive number");
+// } else {
+//   if (num < 0) {
+//     console.log("Negative number");
+//   } else {
+//     console.log("Zero");
+//   }
+// }
+
+// Ternary Operator
+
+
+let num = 10;
+let result = num > 0 ? "Positive number" : num < 0 ? "Negative number" : "Zero";
+console.log(result);
+
+// Conditional styling
+
+let num = 10;
+
+if (num > 0) {
+  document.body.style.backgroundColor = "green";
+} else if (num < 0) {
+  document.body.style.backgroundColor = "red";
+} else {
+  document.body.style.backgroundColor = "blue";
+}
