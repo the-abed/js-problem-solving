@@ -481,3 +481,46 @@ console.log(operate(10, 3, subtract)); // 7
 greetUser("Abed", function (name) {
   console.log("Welcome " + name);
 });
+
+// Check Positive or Negative
+function checkNumber(num) {
+  if (num > 0) {
+    console.log("Positive number");
+  } else if (num < 0) {
+    console.log("Negative number");
+  } else {
+    console.log("Zero");
+  }
+}
+
+// Double Each Element (Custom Map) 
+function myMap(arr, callback) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i]));
+  }
+  return result;
+}
+
+let doubled = myMap([1, 2, 3], function (num) {
+  return num * 2;
+});
+
+console.log(doubled);
+
+// Filter Even Numbers (Custom Filter)
+function myFilter(arr, callback) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+let evens = myFilter([1,2,3,4,5,6], function (num) {
+  return num % 2 === 0;
+});
+
+console.log(evens);
