@@ -416,15 +416,15 @@ delayMessage(function () {
 
 // Conditional 
 
-let num = 10;
+// let num = 10;
 
-if (num > 0) {
-  console.log("Positive number");
-} else if (num < 0) {
-  console.log("Negative number");
-} else {
-  console.log("Zero");
-} 
+// if (num > 0) {
+//   console.log("Positive number");
+// } else if (num < 0) {
+//   console.log("Negative number");
+// } else {
+//   console.log("Zero");
+// } 
 
 // Nested Condition
 
@@ -443,18 +443,41 @@ if (num > 0) {
 // Ternary Operator
 
 
-let num = 10;
-let result = num > 0 ? "Positive number" : num < 0 ? "Negative number" : "Zero";
-console.log(result);
+// let num = 10;
+// let result = num > 0 ? "Positive number" : num < 0 ? "Negative number" : "Zero";
+// console.log(result);
 
-// Conditional styling
+// // Conditional styling
 
-let num = 10;
+// let num = 10;
 
-if (num > 0) {
-  document.body.style.backgroundColor = "green";
-} else if (num < 0) {
-  document.body.style.backgroundColor = "red";
-} else {
-  document.body.style.backgroundColor = "blue";
+// if (num > 0) {
+//   document.body.style.backgroundColor = "green";
+// } else if (num < 0) {
+//   document.body.style.backgroundColor = "red";
+// } else {
+//   document.body.style.backgroundColor = "blue";
+// }
+
+
+// Add, Subtract, Multiply using Callback
+
+function operate(a, b, callback) {
+  return callback(a, b);
 }
+
+function subtract(x, y) {
+  return x - y;
+}
+
+console.log(operate(10, 3, subtract)); // 7
+
+
+ //Greet User with Callback
+ function greetUser(name, callback) {
+  callback(name);
+}
+
+greetUser("Abed", function (name) {
+  console.log("Welcome " + name);
+});
