@@ -524,3 +524,42 @@ let evens = myFilter([1,2,3,4,5,6], function (num) {
 });
 
 console.log(evens);
+
+
+// Double All Numbers (map)
+let numbers = [1, 2, 3, 4];
+
+let doubledNumbers = numbers.map(function (num) {
+  return num * 2;
+});
+
+console.log(doubledNumbers); // [2, 4, 6, 8]
+
+// Get Only Even Numbers (filter)
+let evenNumbers = numbers.filter(function (num) {
+  return num % 2 === 0;
+});
+
+console.log(evenNumbers); // [2, 4]
+
+// let nums = [1, 2, 3, 4, 5, 6];
+
+// let evens = nums.filter(num => num % 2 === 0);
+
+// console.log(evens); // [2, 4, 6]
+
+// Sum of All Numbers (reduce)
+let nums = [10, 20, 30];
+
+let sum = nums.reduce((acc, curr) => acc + curr, 0);
+
+console.log(sum); // 60
+
+
+// Find First Number Greater Than 10 (find)
+let nums = [5, 8, 12, 3];
+
+let result = nums.find(num => num > 10);
+
+console.log(result); // 12
+
