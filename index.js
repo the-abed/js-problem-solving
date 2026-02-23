@@ -557,9 +557,43 @@ console.log(sum); // 60
 
 
 // Find First Number Greater Than 10 (find)
-let nums = [5, 8, 12, 3];
+// let nums = [5, 8, 12, 3];
 
-let result = nums.find(num => num > 10);
+// let result = nums.find(num => num > 10);
 
-console.log(result); // 12
+// console.log(result); // 12
+
+
+if (true) {
+  console.log("Runs");
+}
+
+if ("hello") {
+  console.log("Runs");
+}
+
+// 7 falsy values
+// false
+// 0
+// ""
+// null
+// undefined
+// NaN
+
+// Everything else is truthy
+// "hello"
+// "0"
+// []
+// {}
+// function() {}
+// 1
+// -5
+// true
+
+// type of 
+console.log(typeof "hello");   // string
+console.log(typeof 10);        // number
+console.log(typeof true);      // boolean
+console.log(typeof undefined); // undefined
+
 
