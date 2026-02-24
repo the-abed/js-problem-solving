@@ -518,3 +518,273 @@ function debounce(fn, delay) {
     }, delay);
   };
 }
+
+
+// =======================================
+// JAVASCRIPT PROBLEM SOLVING SHEET – PART 4
+// =======================================
+
+
+
+// 1️⃣ Find Majority Element (appears more than n/2 times)
+function majorityElement(arr) {
+  let countMap = {};
+
+  for (let num of arr) {
+    countMap[num] = (countMap[num] || 0) + 1;
+
+    if (countMap[num] > arr.length / 2) {
+      return num;
+    }
+  }
+
+  return null;
+}
+console.log(majorityElement([2,2,1,2,3,2,2]));
+
+
+
+// 2️⃣ Move All Zeros to End
+function moveZeros(arr) {
+  let nonZero = arr.filter(num => num !== 0);
+  let zeros = arr.filter(num => num === 0);
+  return [...nonZero, ...zeros];
+}
+console.log(moveZeros([0,1,0,3,12]));
+
+
+
+// 3️⃣ Find First Duplicate Element
+function firstDuplicate(arr) {
+  let seen = new Set();
+
+  for (let num of arr) {
+    if (seen.has(num)) return num;
+    seen.add(num);
+  }
+  return null;
+}
+console.log(firstDuplicate([2,1,3,5,3,2]));
+
+
+
+// 4️⃣ Deep Flatten Array (any level)
+function deepFlatten(arr) {
+  let result = [];
+
+  for (let item of arr) {
+    if (Array.isArray(item)) {
+      result = result.concat(deepFlatten(item));
+    } else {
+      result.push(item);
+    }
+  }
+
+  return result;
+}
+console.log(deepFlatten([1,[2,[3,4],5]]));
+
+
+
+// 5️⃣ Find Missing Numbers in Sequence
+function findMissingNumbers(arr) {
+  let missing = [];
+
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+
+  for (let i = min; i <= max; i++) {
+    if (!arr.includes(i)) {
+      missing.push(i);
+    }
+  }
+
+  return missing;
+}
+console.log(findMissingNumbers([1,2,4,6]));
+
+
+
+// 6️⃣ Chunk Array into Size N
+function chunkArray(arr, size) {
+  let result = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+
+  return result;
+}
+console.log(chunkArray([1,2,3,4,5,6], 2));
+
+
+
+// 7️⃣ Find Longest Substring Without Repeating Characters
+function longestUniqueSubstring(str) {
+  let set = new Set();
+  let left = 0;
+  let maxLength = 0;
+
+  for (let right = 0; right < str.length; right++) {
+    while (set.has(str[right])) {
+      set.delete(str[left]);
+      left++;
+    }
+
+    set.add(str[right]);
+    maxLength = Math.max(maxLength, set.size);
+  }
+
+  return maxLength;
+}
+console.log(longestUniqueSubstring("abcabcbb"));
+
+
+
+// 8️⃣ Group Array of Objects by Property
+function groupBy(arr, key) {
+  return arr.reduce((acc, obj) => {
+    let value = obj[key];
+
+    if (!acc[value]) {
+      acc[value] = [];
+    }
+
+    acc[value].push(obj);
+    return acc;
+  }, {});
+}
+
+console.log(groupBy([
+  {name:"A", age:20},
+  {name:"B", age:20},
+  {name:"C", age:25}
+], "age"));
+
+
+
+// 9️⃣ Check If Two Objects Are Shallow Equal
+function shallowEqual(obj1, obj2) {
+  let keys1 = Object.keys(obj1);
+  let keys2 = Object.keys(obj2);
+
+  if (keys1.length !== keys2.length) return false;
+
+  for (let key of keys1) {
+    if (obj1[key] !== obj2[key]) return false;
+  }
+
+  return true;
+}
+console.log(shallowEqual({a:1,b:2}, {a:1,b:2}));
+
+
+
+// 🔟 Implement Simple Memoization
+function memoize(fn) {
+  let cache = {};
+
+  return function (...args) {
+    let key = JSON.stringify(args);
+
+    if (cache[key]) {
+      return cache[key];
+    }
+
+    let result = fn(...args);
+    cache[key] = result;
+    return result;
+  };
+}
+
+function slowAdd(a, b) {
+  console.log("Calculating...");
+  return a + b;
+}
+
+const fastAdd = memoize(slowAdd);
+
+console.log(fastAdd(5, 10));
+console.log(fastAdd(5, 10)); // cached
+
+
+
+// 1️⃣1️⃣ Find All Unique Pairs That Sum to Target
+function uniquePairs(arr, target) {
+  let seen = new Set();
+  let pairs = new Set();
+
+  for (let num of arr) {
+    let complement = target - num;
+
+    if (seen.has(complement)) {
+      pairs.add(JSON.stringify([num, complement].sort((a,b)=>a-b)));
+    }
+
+    seen.add(num);
+  }
+
+  return [...pairs].map(pair => JSON.parse(pair));
+}
+console.log(uniquePairs([1,2,3,4,3,2], 5));
+
+
+
+// 1️⃣2️⃣ Convert Object to Query String
+function objectToQuery(obj) {
+  return Object.keys(obj)
+    .map(key => key + "=" + encodeURIComponent(obj[key]))
+    .join("&");
+}
+console.log(objectToQuery({name:"Abed", age:24}));
+
+
+
+// 1️⃣3️⃣ Implement Once Function
+function once(fn) {
+  let called = false;
+  let result;
+
+  return function (...args) {
+    if (!called) {
+      result = fn(...args);
+      called = true;
+    }
+    return result;
+  };
+}
+
+const init = once(() => console.log("Initialized"));
+init();
+init();
+
+
+
+// 1️⃣4️⃣ Find Maximum Occurring Character
+function maxOccurringChar(str) {
+  let map = {};
+  let maxChar = "";
+  let maxCount = 0;
+
+  for (let char of str) {
+    map[char] = (map[char] || 0) + 1;
+
+    if (map[char] > maxCount) {
+      maxCount = map[char];
+      maxChar = char;
+    }
+  }
+
+  return maxChar;
+}
+console.log(maxOccurringChar("javascript"));
+
+
+
+// 1️⃣5️⃣ Validate Email (Simple Regex)
+function validateEmail(email) {
+  let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+console.log(validateEmail("test@example.com"));
+
