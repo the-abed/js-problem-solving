@@ -328,3 +328,193 @@ function sumAll(...numbers) {
   return numbers.reduce((sum, num) => sum + num, 0);
 }
 console.log(sumAll(1,2,3,4,5));
+
+
+
+// =======================================
+// JAVASCRIPT PROBLEM SOLVING SHEET – PART 3
+// =======================================
+
+
+
+// 1️⃣ Find the Sum of Even Numbers in Array
+function sumEven(arr) {
+  return arr
+    .filter(num => num % 2 === 0)
+    .reduce((sum, num) => sum + num, 0);
+}
+console.log(sumEven([1,2,3,4,5,6]));
+
+
+
+// 2️⃣ Rotate Array Right by 1 Step
+function rotateRight(arr) {
+  let last = arr.pop();
+  arr.unshift(last);
+  return arr;
+}
+console.log(rotateRight([1,2,3,4]));
+
+
+
+// 3️⃣ Check If String Contains Only Digits
+function onlyDigits(str) {
+  return /^\d+$/.test(str);
+}
+console.log(onlyDigits("12345"));
+
+
+
+// 4️⃣ Find Intersection Without Using Includes
+function intersection(arr1, arr2) {
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        result.push(arr1[i]);
+      }
+    }
+  }
+  return [...new Set(result)];
+}
+console.log(intersection([1,2,3,4], [3,4,5]));
+
+
+
+// 5️⃣ Convert Array to Object
+// Input: ["a", "b", "c"]
+// Output: {0:"a",1:"b",2:"c"}
+function arrayToObject(arr) {
+  let obj = {};
+  arr.forEach((item, index) => {
+    obj[index] = item;
+  });
+  return obj;
+}
+console.log(arrayToObject(["a","b","c"]));
+
+
+
+// 6️⃣ Count How Many Times a Specific Number Appears
+function countSpecific(arr, target) {
+  return arr.filter(num => num === target).length;
+}
+console.log(countSpecific([1,2,3,2,2,4], 2));
+
+
+
+// 7️⃣ Check If Two Arrays Are Equal
+function arraysEqual(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) return false;
+  }
+  return true;
+}
+console.log(arraysEqual([1,2,3], [1,2,3]));
+
+
+
+// 8️⃣ Find Average of Numbers in Array
+function findAverage(arr) {
+  let sum = arr.reduce((a, b) => a + b, 0);
+  return sum / arr.length;
+}
+console.log(findAverage([10,20,30]));
+
+
+
+// 9️⃣ Remove Specific Value from Array
+function removeValue(arr, value) {
+  return arr.filter(item => item !== value);
+}
+console.log(removeValue([1,2,3,2,4], 2));
+
+
+
+// 🔟 Find All Pairs That Sum to Target
+function findPairs(arr, target) {
+  let pairs = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === target) {
+        pairs.push([arr[i], arr[j]]);
+      }
+    }
+  }
+  return pairs;
+}
+console.log(findPairs([1,2,3,4,5], 6));
+
+
+
+// 1️⃣1️⃣ Find Longest Common Prefix
+function longestCommonPrefix(arr) {
+  if (!arr.length) return "";
+
+  let prefix = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    while (!arr[i].startsWith(prefix)) {
+      prefix = prefix.slice(0, -1);
+    }
+  }
+  return prefix;
+}
+console.log(longestCommonPrefix(["flower","flow","flight"]));
+
+
+
+// 1️⃣2️⃣ Merge Two Arrays and Sort
+function mergeAndSort(arr1, arr2) {
+  return [...arr1, ...arr2].sort((a,b) => a - b);
+}
+console.log(mergeAndSort([5,1], [3,2]));
+
+
+
+// 1️⃣3️⃣ Toggle Case of String
+function toggleCase(str) {
+  return str
+    .split("")
+    .map(char =>
+      char === char.toUpperCase()
+        ? char.toLowerCase()
+        : char.toUpperCase()
+    )
+    .join("");
+}
+console.log(toggleCase("AbCdE"));
+
+
+
+// 1️⃣4️⃣ Find Duplicate Elements
+function findDuplicates(arr) {
+  let seen = new Set();
+  let duplicates = new Set();
+
+  for (let num of arr) {
+    if (seen.has(num)) {
+      duplicates.add(num);
+    }
+    seen.add(num);
+  }
+  return [...duplicates];
+}
+console.log(findDuplicates([1,2,3,2,4,1]));
+
+
+
+// 1️⃣5️⃣ Simple Debounce Function
+function debounce(fn, delay) {
+  let timer;
+
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}
