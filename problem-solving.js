@@ -179,3 +179,152 @@ console.log(calculate(5, 3, multiply));
 
 // 🔥 Bonus Output Question
 console.log(1 + "2" + 3); // "123"
+
+
+
+// =======================================
+// JAVASCRIPT PROBLEM SOLVING SHEET – PART 2
+// =======================================
+
+
+
+// 1️⃣ Find Minimum Number in Array
+function findMinimum(arr) {
+  return Math.min(...arr);
+}
+console.log(findMinimum([5, 3, 9, 1, 6]));
+
+
+
+// 2️⃣ Capitalize First Letter of Each Word
+function capitalizeWords(str) {
+  return str
+    .split(" ")
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(" ");
+}
+console.log(capitalizeWords("i love javascript"));
+
+
+
+// 3️⃣ Check If Two Strings Are Anagrams
+function isAnagram(str1, str2) {
+  let a = str1.split("").sort().join("");
+  let b = str2.split("").sort().join("");
+  return a === b;
+}
+console.log(isAnagram("listen", "silent"));
+
+
+
+// 4️⃣ Find Factorial Using Recursion
+function factorialRecursive(n) {
+  if (n === 0) return 1;
+  return n * factorialRecursive(n - 1);
+}
+console.log(factorialRecursive(5));
+
+
+
+// 5️⃣ Generate Fibonacci Series (First N Terms)
+function fibonacci(n) {
+  let arr = [0, 1];
+
+  for (let i = 2; i < n; i++) {
+    arr[i] = arr[i - 1] + arr[i - 2];
+  }
+  return arr;
+}
+console.log(fibonacci(7));
+
+
+
+// 6️⃣ Find Common Elements Between Two Arrays
+function findCommon(arr1, arr2) {
+  return arr1.filter(item => arr2.includes(item));
+}
+console.log(findCommon([1,2,3,4], [3,4,5,6]));
+
+
+
+// 7️⃣ Check If Array Is Sorted
+function isSorted(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) return false;
+  }
+  return true;
+}
+console.log(isSorted([1,2,3,4]));
+
+
+
+// 8️⃣ Find Longest Word in String
+function longestWord(str) {
+  let words = str.split(" ");
+  let longest = "";
+
+  for (let word of words) {
+    if (word.length > longest.length) {
+      longest = word;
+    }
+  }
+  return longest;
+}
+console.log(longestWord("I am learning javascript deeply"));
+
+
+
+// 9️⃣ Convert Celsius to Fahrenheit
+function celsiusToFahrenheit(c) {
+  return (c * 9/5) + 32;
+}
+console.log(celsiusToFahrenheit(30));
+
+
+
+// 🔟 Remove Falsy Values from Array
+function removeFalsy(arr) {
+  return arr.filter(Boolean);
+}
+console.log(removeFalsy([0, 1, false, 2, "", 3, null]));
+
+
+
+// 1️⃣1️⃣ Count Words in a Sentence
+function countWords(str) {
+  return str.trim().split(/\s+/).length;
+}
+console.log(countWords("I love problem solving"));
+
+
+
+// 1️⃣2️⃣ Find Index of Largest Number
+function indexOfLargest(arr) {
+  let max = Math.max(...arr);
+  return arr.indexOf(max);
+}
+console.log(indexOfLargest([5, 9, 2, 15, 6]));
+
+
+
+// 1️⃣3️⃣ Reverse Number
+function reverseNumber(num) {
+  return Number(num.toString().split("").reverse().join(""));
+}
+console.log(reverseNumber(12345));
+
+
+
+// 1️⃣4️⃣ Check If Object Is Empty
+function isEmptyObject(obj) {
+  return Object.keys(obj).length === 0;
+}
+console.log(isEmptyObject({}));
+
+
+
+// 1️⃣5️⃣ Simple Sum Using Rest Parameter
+function sumAll(...numbers) {
+  return numbers.reduce((sum, num) => sum + num, 0);
+}
+console.log(sumAll(1,2,3,4,5));
