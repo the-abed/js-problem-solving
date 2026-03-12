@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML All In One Practice</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header, footer{
+            background:#f2f2f2;
+            padding:15px;
+        }
+        nav a{
+            margin-right:10px;
+        }
+        table, th, td{
+            border:1px solid black;
+            border-collapse: collapse;
+            padding:5px;
+        }
+        section{
+            margin-top:30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <h1>HTML Complete Practice Page</h1>
+    <p>This page demonstrates most HTML elements.</p>
+</header>
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<!-- ================= TEXT ELEMENTS ================= -->
+<section>
+    <h2>Text Elements</h2>
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+
+    <p>This is a <strong>strong</strong> text and <em>emphasized</em> text.</p>
+    <p>This is <b>bold</b>, <i>italic</i>, <u>underline</u>.</p>
+    <p>H<sub>2</sub>O and 10<sup>2</sup></p>
+
+    <blockquote>
+        This is a blockquote example.
+    </blockquote>
+
+    <code>
+        console.log("Hello World");
+    </code>
+</section>
+
+<!-- ================= LIST ================= -->
+<section>
+    <h2>Lists</h2>
+
+    <h3>Unordered List</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol>
+        <li>Wake up</li>
+        <li>Study</li>
+        <li>Code</li>
+    </ol>
+</section>
+
+<!-- ================= LINKS ================= -->
+<section>
+    <h2>Links</h2>
+    <a href="https://www.google.com" target="_blank">Go to Google</a>
+</section>
+
+<!-- ================= IMAGE ================= -->
+<section>
+    <h2>Image</h2>
+    <img src="https://via.placeholder.com/200" alt="sample image">
+</section>
+
+<!-- ================= TABLE ================= -->
+<section>
+    <h2>Table</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Abed</td>
+                <td>24</td>
+                <td>Bangladesh</td>
+            </tr>
+
+            <tr>
+                <td>John</td>
+                <td>30</td>
+                <td>USA</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ================= FORM ================= -->
+<section>
+    <h2>Form</h2>
+
+    <form>
+
+        <label>Name:</label>
+        <input type="text" placeholder="Enter name"><br><br>
+
+        <label>Email:</label>
+        <input type="email"><br><br>
+
+        <label>Password:</label>
+        <input type="password"><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female <br><br>
+
+        <label>Skills:</label>
+        <input type="checkbox"> HTML
+        <input type="checkbox"> CSS
+        <input type="checkbox"> JS <br><br>
+
+        <label>Country:</label>
+        <select>
+            <option>Bangladesh</option>
+            <option>USA</option>
+            <option>UK</option>
+        </select>
+        <br><br>
+
+        <label>Message:</label><br>
+        <textarea rows="4" cols="30"></textarea>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<!-- ================= AUDIO VIDEO ================= -->
+<section>
+    <h2>Media</h2>
+
+    <video width="300" controls>
+        <source src="movie.mp4" type="video/mp4">
+    </video>
+
+    <br><br>
+
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+</section>
+
+<!-- ================= IFRAME ================= -->
+<section>
+    <h2>Iframe</h2>
+
+    <iframe 
+        width="400"
+        height="200"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
+</section>
+
+<!-- ================= SEMANTIC ELEMENTS ================= -->
+<section>
+    <h2>Semantic Elements</h2>
+
+    <article>
+        <h3>Article Title</h3>
+        <p>This is an article example.</p>
+    </article>
+
+    <aside>
+        <p>This is aside content.</p>
+    </aside>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2026 HTML Practice Page</p>
+</footer>
+
+</body>
+</html>
